@@ -33,9 +33,19 @@ RSpec.describe StringCalculator do
       expect(string_calculator.add(input)).to eq(1070)
     end
 
-    it "multipe number with 4 digit sum" do
+    it "multipe number with 4 digit sum with multiple line" do
       input = "1,\n2\n3\n4\n5"
       expect(string_calculator.add(input)).to eq(15)
+    end
+
+    it "different delimiter" do
+      input = "//;\n1;2"
+      expect(string_calculator.add(input)).to eq(3)
+    end
+
+    it "different delimiter with multiple elements" do
+      input = "//;\n1;2;3;5;9"
+      expect(string_calculator.add(input)).to eq(20)
     end
   end
 end
