@@ -27,5 +27,15 @@ RSpec.describe StringCalculator do
       input = "1,5, 100, 500, 454"
       expect(string_calculator.add(input)).to eq(1060)
     end
+
+    it "multipe number with 4 digit sum" do
+      input = "1,\n5, 100\n500, 454, 10"
+      expect(string_calculator.add(input)).to eq(1070)
+    end
+
+    it "multipe number with 4 digit sum" do
+      input = "1,\n2\n3\n4\n5"
+      expect(string_calculator.add(input)).to eq(15)
+    end
   end
 end
