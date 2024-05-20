@@ -1,9 +1,9 @@
-require 'pry'
 class StringCalculator
 
   def add input_str
     @numbers = input_str
     return 0 if input_str.empty?
+    error_if_negative
     numbers.reduce(:+)
   end
 
@@ -25,4 +25,11 @@ class StringCalculator
     @numbers[2]
   end
 
+  def negatives
+    numbers.select { |number| number < 0 }
+  end
+
+  def error_if_negative
+    raise "Negatives not allowed: #{negatives.join(', ')}" if negatives.any?
+  end
 end
