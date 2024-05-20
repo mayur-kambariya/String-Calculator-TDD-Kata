@@ -12,5 +12,10 @@ RSpec.describe StringCalculator do
       input = "1"
       expect(string_calculator.add(input)).to eq(1)
     end
+
+    it "sum of two element 1, 5" do
+      input = "1,5"
+      expect(string_calculator.add(input)).to eq(6)
+    end
   end
 end
