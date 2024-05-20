@@ -7,5 +7,10 @@ RSpec.describe StringCalculator do
     it '0 for an empty string' do
       expect(string_calculator.add('')).to eq 0
     end
+
+    it "same number if contain only single element" do
+      input = "1"
+      expect(string_calculator.add(input)).to eq(1)
+    end
   end
 end
