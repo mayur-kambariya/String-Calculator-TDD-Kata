@@ -9,8 +9,12 @@ class StringCalculator
 
   private
 
-  def numbers
+  def number_array_from_input
     @numbers.gsub("\n", delimiter).split(delimiter).map(&:to_i)
+  end
+
+  def numbers
+    number_array_from_input.select { |number| number < 1000 }
   end
 
   def delimiter
