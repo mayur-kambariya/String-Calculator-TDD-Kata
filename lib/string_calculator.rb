@@ -1,10 +1,10 @@
 class StringCalculator
 
-  def add input_str
+  def add input_str, operator = '+'
     @numbers = input_str
     return 0 if input_str.empty?
     error_if_negative
-    numbers.reduce(:+)
+    numbers.select { |number| number > 0 && number < 1000 }.reduce(operator.to_sym)
   end
 
   private
@@ -14,7 +14,7 @@ class StringCalculator
   end
 
   def numbers
-    number_array_from_input.select { |number| number < 1000 }
+    number_array_from_input
   end
 
   def delimiter

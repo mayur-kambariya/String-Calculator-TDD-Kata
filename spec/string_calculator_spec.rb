@@ -83,6 +83,11 @@ RSpec.describe StringCalculator do
         input = "1\n5,1000,\n3,4,5, 1000"
         expect(string_calculator.add(input)).to eq(18)
       end
+
+      it "multiple" do
+        input = "1\n5,1000,\n3,4,5, 1000"
+        expect(string_calculator.add(input, '*')).to eq(300)
+      end
     end
   end
 end
